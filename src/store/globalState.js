@@ -6,12 +6,13 @@ will be used to keep track of the favorite items of the users
 
 */
 const initialState = {
-  userFavoriteLaunches: localStorage.getItem("userFavoriteLaunches") ?
-  JSON.parse (localStorage.getItem(userFavoriteLaunches)) : [],
-
-  userFavoriteLaunchPads: localStorage.getItem("userFavoriteLaunchPads") ? JSON.parse (localStorage.getItem(userFavoriteLaunches)) : [],
-}
-
+  userFavoriteLaunches: localStorage.getItem("userFavoriteLaunches")
+  ? JSON.parse(localStorage.getItem("userFavoriteLaunches"))
+  : [],
+  userFavoriteLaunchPads: localStorage.getItem("userFavoriteLaunchPads")
+    ? JSON.parse(localStorage.getItem("userFavoriteLaunchPads"))
+    : [],
+};
 
 export const GlobalContext = createContext(initialState);
 
@@ -37,13 +38,26 @@ export const GlobalProvider = (props) => {
     dispatch({ type: "REMOVE_ITEM_FROM_FAVORITE_LAUNCH_PADS", payload: item.site_id });
   };
 
+  const addItemToFavoriteLaunches = (item) => {
+    dispatch({ type: "ADD_ITEM_TO_FAVORITE_LAUNCHES", payload: item });
+  };
+
+  const removeItemFromFavoriteLaunches = (item) => {
+    dispatch({
+      type: "REMOVE_ITEM_FROM_FAVORITE_LAUNCHES",
+      payload: item.flight_number,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value = {{
         userFavoriteLaunchPads: state.userFavoriteLaunchPads,
         userFavoriteLaunches: state.userFavoriteLaunches,
         addItemToFavoriteLaunchPads,
-        removeItemFromFavoriteLaunchPads
+        removeItemFromFavoriteLaunchPads,
+        addItemToFavoriteLaunches,
+        removeItemFromFavoriteLaunches
       }}
     >
       {props.children}
