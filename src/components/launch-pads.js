@@ -1,11 +1,12 @@
 import React from "react";
-import { Badge, Box, SimpleGrid, Text } from "@chakra-ui/core";
+import { Badge, Box, SimpleGrid, Text, Flex } from "@chakra-ui/core";
 import { Link } from "react-router-dom";
 
 import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
 import { useSpaceXPaginated } from "../utils/use-space-x";
+import UserFavouriteButton from "./UserFavoriteButton"
 
 const PAGE_SIZE = 12;
 
@@ -85,9 +86,13 @@ function LaunchPadItem({ launchPad }) {
         >
           {launchPad.name}
         </Box>
-        <Text color="gray.500" fontSize="sm">
-          {launchPad.vehicles_launched.join(", ")}
-        </Text>
+        <Flex align="end" justify="space-between">
+          <Text color="gray.500" fontSize="sm">
+            {launchPad.vehicles_launched.join(", ")}
+          </Text>
+          <UserFavouriteButton />
+        </Flex>
+
       </Box>
     </Box>
   );
