@@ -28,6 +28,8 @@ import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import {getUserLocale} from "get-user-locale";
 
+import UserFavoriteButton from "./UserFavoriteButton";
+
 export default function Launch() {
   let { launchId } = useParams();
   const { data: launch, error } = useSpaceX(`/launches/${launchId}`);
@@ -96,6 +98,15 @@ function Header({ launch }) {
         borderRadius="lg"
       >
         {launch.mission_name}
+
+        <Flex>
+          <UserFavoriteButton
+            type={"Launch"}
+            item={launch}
+            id={launch.flight_number}
+          />
+        </Flex>
+      
       </Heading>
       <Stack isInline spacing="3">
         <Badge variantColor="purple" fontSize={["xs", "md"]}>
