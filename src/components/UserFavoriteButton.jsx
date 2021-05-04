@@ -14,7 +14,10 @@ const UserFavoriteButton = ({type, item, id}) => {
     userFavoriteLaunches,
   } = useContext(GlobalContext);
 
-
+  let storedItem =
+  userFavoriteLaunchPads.find((launchPad) => launchPad.site_id === id) 
+  || userFavoriteLaunches.find((launch) => launch.flight_number === id);
+  const isFavorite = storedItem ? true : false;
 
   const setFavorite = (event, type, item) => {
     event.preventDefault(); //prevents from loading the next 
@@ -34,12 +37,6 @@ const UserFavoriteButton = ({type, item, id}) => {
       addItemToFavoriteLaunches(item):
       removeItemFromFavoriteLaunches(item);
   }
-
-  let storedItem =
-  userFavoriteLaunchPads.find((launchPad) => launchPad.site_id === id) 
-  || userFavoriteLaunches.find((launch) => launch.flight_number === id);
-  const isFavorite = storedItem ? true : false;
-
  
   return (
     <>
