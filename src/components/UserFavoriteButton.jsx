@@ -8,7 +8,6 @@ const UserFavoriteButton = ({type, item, id}) => {
   const {
     addItemToFavoriteLaunchPads,
     removeItemFromFavoriteLaunchPads,
-    favoriteLaunchPads,
     addItemToFavoriteLaunches,
     removeItemFromFavoriteLaunches,
     userFavoriteLaunchPads,
@@ -37,10 +36,11 @@ const UserFavoriteButton = ({type, item, id}) => {
   }
 
   let storedItem =
-  userFavoriteLaunches.find((i) => i.site_id === id) ||
-  userFavoriteLaunchPads.find((i) => i.flight_number === id);
-  const isFavoriteFilled = storedItem ? true : false;
+  userFavoriteLaunchPads.find((launchPad) => launchPad.site_id === id) 
+  || userFavoriteLaunches.find((launch) => launch.flight_number === id);
+  const isFavorite = storedItem ? true : false;
 
+ 
   return (
     <>
       <IconButton
@@ -48,8 +48,8 @@ const UserFavoriteButton = ({type, item, id}) => {
         as={Star}
         variant="solid"
         size="md"
-        stroke="#ECD94B"
-        style = {{fill: "none"}}
+        stroke="#ECD97B"
+        style={isFavorite ? { fill: "#ECD97B" } : { fill: "none" }}
       />
     </>
   )
