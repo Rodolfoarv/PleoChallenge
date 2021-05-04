@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { IconButton } from "@chakra-ui/core";
-import { Star } from "react-feather";
+import { Heart } from "react-feather";
 import { GlobalContext } from "../store/globalState";
 
-const UserFavoriteButton = ({type, item, id}) => {
+const UserFavoriteButton = ({type, item, id, isModal}) => {
 
   const {
     addItemToFavoriteLaunchPads,
@@ -42,11 +42,11 @@ const UserFavoriteButton = ({type, item, id}) => {
     <>
       <IconButton
         onClick={(event) => setFavorite(event, type, item)}
-        as={Star}
+        as={Heart}
         variant="solid"
         size="md"
-        stroke="#ECD97B"
-        style={isFavorite ? { fill: "#ECD97B" } : { fill: "none" }}
+        stroke="#Ec7272"
+        style={isFavorite ? { fill: "#Ec7272" } : { fill: "none" }}
       />
     </>
   )
