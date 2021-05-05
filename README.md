@@ -1,48 +1,45 @@
-![Drawing of a rocket launching with Pleo logo on the side](https://repository-images.githubusercontent.com/255552950/c9991080-ff11-11ea-8706-5d40322f68fe)
+# Space Rockets Challenge. Pleo Frontend Challenge
 
-# ¡Space·Rockets! app
+In this document I will describe all the procedures before developing any code and also how the code was written with Pull Requests and testing each of the features.
 
-### [👉 Go to the challenge 👈](./CHALLENGE.md)
+# Demo
 
-### [🚀 See the app in action 🚀](https://spacerockets.netlify.app)
+You can find a demo in the following Netlify hosted site
 
-## Develop
+# How did I work on this challenge?
 
-> You'll need [Node](https://nodejs.org/en/) and
-> [Yarn](https://classic.yarnpkg.com/en/) installed
+Before writting any code I read through the description of the task. I treated each of the requirements as tickets, thus there is a **Pull request** associated to each of the tasks in the challenge.
 
-- run `yarn` to install dependencies
-- run `yarn start` to start development environment
+Every "small feature" was developed in a separated pull request with the commits associated to it. This is a common practice I follow, afterwards someone reviews my PR or do a Pair Programming exercise to ensure the quality and coding standards of the feature being developed.
 
-## Build
+- Fixing datetime bug
+- Implementing sidebar favorite feature
+- Implementing a Rocket Animation in the home screen
+- Refactoring some components
 
-> You'll need [Node](https://nodejs.org/en/) and
-> [Yarn](https://classic.yarnpkg.com/en/) installed
+## Who reviewed my PR's ?
 
-- run `yarn` to install dependencies
-- run `yarn build` to start development environment
-- output is in `build` directory,
-  [ready to be deployed](https://create-react-app.dev/docs/deployment/)
+My friend's dog was in charge with the mission of reviewing my PRs in exchange for treats.
 
-## Data
+![Doggo](/public/doggo.jpg)
 
-All data is fetched from the unofficial SpaceX API V3 at
-[spacexdata.com](https://docs.spacexdata.com/?version=latest).
+## What did I learn?
 
-## Technologies
+I have never used the SpaceX api before it is actually a really well built API and I loved working with it.
 
-> This project was bootstrapped with
-> [Create React App](https://github.com/facebook/create-react-app). You can
-> learn more in the
-> [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Along with this, I had the opportunity to make a css animation, it's been a while since I was able to build one of this from scratch :)
 
-- [React](https://reactjs.org/) - UI library
-- [Chakra UI](https://chakra-ui.com/) - Design system and component library,
-  with [Emotion](https://emotion.sh), its peer dependency
-- [SWR](https://swr.now.sh/) - Data fetching and caching library
-- [React Router v6](https://github.com/ReactTraining/react-router/blob/f59ee5488bc343cf3c957b7e0cc395ef5eb572d2/docs/installation/getting-started.md) -
-  routing library
-- [React Feathers](https://github.com/feathericons/react-feather) - Icons
-  ([Feather icons](https://feathericons.com/) wrapper for React)
-- [timeago.js](https://timeago.org/) - Tiny library to display human-readable
-  relative time difference
+It was a fun challenge as I am passionate of space! Have you watched Luna short film on youtube?
+
+## What can be improved?
+
+Many things may be improved in this code, here I am shortlisting a few:
+
+- Adding a test suite
+- Refactoring the application even more, I have noticed we are not using Typescript yet.
+- Refactoring some of the React Components, we are not using jsx
+- Many more
+
+# Big Thank You!
+
+It was nice working on this challenge, if you have any question do not hesitate in contacting me :)
